@@ -1,24 +1,26 @@
-# README
+# Freight System - Sarah
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Descrição
 
-Things you may want to cover:
+Gerenciar a frota de entrega para um e-commerce com alcance nacional. Diferentes tipos de transporte são cadastrados definindo as cidades de atuação, os prazos e os custos.
+ 
+## Instruções
 
-* Ruby version
+### Clone o repositório
 
-* System dependencies
+```shell
+git clone git@github.com:sarahsantosst/freight_system.git
+cd freight_system
+```
 
-* Configuration
+### Instalar dependências
 
-* Database creation
+```shell
+bundle install
+```
 
-* Database initialization
+### Rodar aplicação
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+```shell
+rails server
+```
