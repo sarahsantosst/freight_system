@@ -1,0 +1,36 @@
+<h1>Tipo de Transporte</h1>
+
+<dl>
+  <dt>Nome:</dt>
+  <dd><%=@transport_type.name %></dd>
+
+  <dt>Distância Mínima:</dt>
+  <dd><%=@transport_type.minimum_distance %></dd>
+
+  <dt>Distância Máxima:</dt>
+  <dd><%=@transport_type.maximum_distance %></dd>
+
+  <dt>Peso Mínimo:</dt>
+  <dd><%=@transport_type.minimum_weight %></dd>
+
+  <dt>Peso Máximo:</dt>
+  <dd><%=@transport_type.maximum_weight %></dd>
+
+  <dt>Taxa Fixa:</dt>
+  <dd><%=@transport_type.flat_hate %></dd>
+
+  <dt>Ativo:</dt>
+  <dd><%=@transport_type.active %></dd>
+</dl>
+
+<div>
+  <% if (@transport_type.active?) %>
+    <%= button_to('Desativar', disable_transport_type_path(@transport_type.id), method: :disable)%>
+  <% else %>
+    <%= button_to('Ativar', active_transport_type_path(@transport_type.id), method: :active)%>
+  <% end %>
+</div>
+
+<div>
+  <%= link_to 'Voltar', transport_types_path %>
+</div>

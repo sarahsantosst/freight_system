@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Sistema de Frete</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= stylesheet_link_tag "application" %>
+  </head>
+  <body>
+    <header>
+      <%= link_to root_path do  %>
+        <h1>Sistema de Frete</h1>
+      <% end %>
+      <nav>
+        <%= link_to 'Tipo de Transporte', transport_types_path %>
+      </nav>
+    </header>
+    <main>
+      <div>
+        <%= notice %>
+        <%= alert %>
+      </div>
+      <%= yield %>
+    </main>
+  </body>
+</html>

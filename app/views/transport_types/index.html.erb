@@ -1,0 +1,16 @@
+<h1>Tipo de Transporte</h1>
+
+<% @transport_types.each do |t| %>
+  <div>
+    <h3><%= link_to(t.name, transport_type_path(t.id)) %></h3>
+  </div>
+<% end %>
+
+<% if @transport_types.empty? %>
+  <p>Não existem tipos de transportes cadastrados</p>
+<% end %>
+
+<%= link_to 'Cadastrar Tipo de Transporte', new_transport_type_path%>
+
+
+

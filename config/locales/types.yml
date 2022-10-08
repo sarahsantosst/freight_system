@@ -1,0 +1,12 @@
+pt-BR:
+  activerecord:
+    models:
+      transport_type: Modelo de Produto
+    attributes:
+      transport_type:
+        name: "Nome"
+        minimum_distance: "Distância Mínima"
+        maximum_distance: "Distância Máxima"
+        maximum_weight: "Peso Máximo"
+        minimum_weight: "Peso Mínimo"
+        flat_hate: "Taxa Fixa"
