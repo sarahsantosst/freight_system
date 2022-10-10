@@ -19,6 +19,12 @@ cd freight_system
 bundle install
 ```
 
+### Rodar Migrations
+
+```shell
+rails db:migration
+```
+
 ### Rodar aplicação
 
 ```shell
