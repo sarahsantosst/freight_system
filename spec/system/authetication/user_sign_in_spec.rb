@@ -7,7 +7,7 @@ describe 'Usuário se autentica' do
 
     #act
     visit root_path
-    click_on 'Entrar'
+    click_on 'Fazer login'
     
     within('form') do 
       fill_in 'E-mail', with: 'sarah@sistemadefrete.com.br'
@@ -17,7 +17,7 @@ describe 'Usuário se autentica' do
 
     #assert
     expect(page).to have_content 'Login efetuado com sucesso.'
-    expect(page).not_to have_link 'Entrar'
+    expect(page).not_to have_link 'Fazer login'
     expect(page).to have_button 'Sair'
     within('nav') do
       expect(page).to have_content 'Sarah Santos - sarah@sistemadefrete.com.br'
@@ -30,7 +30,7 @@ describe 'Usuário se autentica' do
     
     #act
       visit root_path
-      click_on 'Entrar'
+      click_on 'Fazer login'
       fill_in 'E-mail', with: 'johndoe@sistemadefrete.com.br'
       fill_in 'Senha', with: 'password'
       within('form') do
@@ -39,8 +39,8 @@ describe 'Usuário se autentica' do
       click_on 'Sair'
 
     #assert
-    expect(page).to have_content 'Logout efetuado com sucesso.'
-    expect(page).to have_link 'Entrar'
+    expect(page).to have_content 'Para continuar, faça login ou registre-se.'
+    expect(page).to have_link 'Fazer login'
     expect(page).not_to have_button 'Sair'
     expect(page).not_to have_content 'John Doe - johndoe@sistemadefrete.com.br'
   end

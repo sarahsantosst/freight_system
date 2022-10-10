@@ -1,5 +1,6 @@
 class TransportTypesController < ApplicationController
   skip_before_action :verify_authenticity_token
+  before_action :is_admin?
 
   def index
     @transport_types = TransportType.all
@@ -39,9 +40,17 @@ class TransportTypesController < ApplicationController
     redirect_to transport_types_url
   end
 
+  private
+
   def transport_type_params
     transport_type_params = params
       .require(:transport_type)
       .permit(:name, :minimum_distance, :maximum_distance, :minimum_weight, :maximum_weight, :flat_hate)
+  end
+ 
+  def is_admin?
+    if !current_user.admin?
+      redirect_to root_path, alert: 'Página restrita, somente administradores'
+    end
   end
 end

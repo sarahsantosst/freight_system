@@ -2,7 +2,11 @@ require 'rails_helper'
 
 describe 'Administrador cadastra um novo tipo de transporte' do 
   it 'a partir do menu' do 
+    #arrange
+    admin = User.create!(name: 'Admin', email: 'sarah@sistemadefrete.com.br', password: 'password', admin: true)
+
     #act
+    login_as(admin)
     visit root_path
     click_on('Tipo de Transporte')
     click_on('Cadastrar Tipo de Transporte')
@@ -17,7 +21,11 @@ describe 'Administrador cadastra um novo tipo de transporte' do
   end
 
   it 'com sucesso' do 
+    #arrange
+    admin = User.create!(name: 'Admin', email: 'sarah@sistemadefrete.com.br', password: 'password', admin: true)
+
     #act
+    login_as(admin)
     visit root_path
     click_on('Tipo de Transporte')
     click_on('Cadastrar Tipo de Transporte')
@@ -37,7 +45,11 @@ describe 'Administrador cadastra um novo tipo de transporte' do
   end 
   
   it 'com dados incompletos' do 
+    #arrange
+    admin = User.create!(name: 'Admin', email: 'sarah@sistemadefrete.com.br', password: 'password', admin: true)
+
     #act
+    login_as(admin)
     visit root_path
     click_on('Tipo de Transporte')
     click_on('Cadastrar Tipo de Transporte')

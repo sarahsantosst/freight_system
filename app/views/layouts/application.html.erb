@@ -13,12 +13,12 @@
         <h1>Sistema de Frete</h1>
       <% end %>
       <nav>
-        <%= link_to 'Tipo de Transporte', transport_types_path %>
         <% if user_signed_in? %>
+          <%= link_to 'Tipo de Transporte', transport_types_path %>
           <%= current_user.description %>
           <%= button_to 'Sair', destroy_user_session_path, method: :delete %>
         <% else %>
-          <%= link_to 'Entrar', new_user_session_path%>
+          <%= link_to 'Fazer login', new_user_session_path%>
         <% end %>
       </nav>
     </header>
