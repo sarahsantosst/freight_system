@@ -40,6 +40,20 @@ class TransportTypesController < ApplicationController
     redirect_to transport_types_url
   end
 
+  def edit
+    @transport_type = TransportType.find(params[:id])
+  end
+
+  def update
+    @transport_type = TransportType.find(params[:id])
+    if @transport_type.update(transport_type_params)
+      redirect_to @transport_type, notice: 'Tipo de Transporte atualizado com sucesso.'
+    else
+      flash.now[:notice] = "Todos os campos são obrigatórios"
+      render 'edit'
+    end
+  end
+
   private
 
   def transport_type_params
