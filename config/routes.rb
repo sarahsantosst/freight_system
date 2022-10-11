@@ -5,4 +5,9 @@ Rails.application.routes.draw do
     post 'active', on: :member
     post 'disable', on: :member
   end
+  resources :vehicles, only: [:show, :index, :new, :create, :edit, :update] do 
+    get 'search', on: :collection
+    post 'active', on: :member
+    post 'disable', on: :member
+  end
 end

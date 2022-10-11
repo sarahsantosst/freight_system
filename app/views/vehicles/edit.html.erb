@@ -1,0 +1,44 @@
+<h1>Editar Veículo</h1>
+
+<% if(@vehicle.errors.any?)%>
+  <p>Verifique os erros abaixo:</p>
+  <ul>
+    <% @vehicle.errors.full_messages.each do |msg| %>
+    <li> <%= msg %> </li>
+    <% end %>
+  </ul>
+<% end %>
+
+<%= form_with(model: @vehicle) do |f| %>
+  <div>
+    <%= f.label :transport_type_id %>
+    <%= f.collection_select :transport_type_id, @transport_types || [], :id, :name %>
+  </div>
+
+  <div>
+    <%= f.label :license_plate %>
+    <%= f.text_field :license_plate %>
+  </div>
+
+  <div>
+    <%= f.label :brand %>
+    <%= f.text_field :brand %>
+  </div>
+
+  <div>
+    <%= f.label :model %>
+    <%= f.text_field :model %>
+  </div>
+
+  <div>
+    <%= f.label :manufacture_year %>
+    <%= f.text_field :manufacture_year %>
+  </div>
+
+  <div>
+    <%= f.label :maximum_load_capacity %>
+    <%= f.text_field :maximum_load_capacity %>
+  </div>
+
+  <%= f.submit 'Atualizar' %>
+<% end %>

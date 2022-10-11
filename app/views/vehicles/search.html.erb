@@ -1,0 +1,5 @@
+<h1>Resultado da Busca por: <%= @license_plate %></h1>
+<span>Veículos encontrados: <%= @vehicles.count %> </span>
+<% @vehicles.each do |v| %>
+  <dd><%= link_to(v.license_plate, vehicle_path(v.id)) %></dd>
+<% end %>

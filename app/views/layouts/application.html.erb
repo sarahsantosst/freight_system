@@ -15,6 +15,7 @@
       <nav>
         <% if user_signed_in? %>
           <%= link_to 'Tipo de Transporte', transport_types_path %>
+          <%= link_to 'Veículo', vehicles_path %>
           <%= current_user.description %>
           <%= button_to 'Sair', destroy_user_session_path, method: :delete %>
         <% else %>

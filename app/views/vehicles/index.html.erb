@@ -1,0 +1,19 @@
+<h1>Veículos</h1>
+
+<%= form_with(url: search_vehicles_path, method: :get) do |f| %>
+  <%= f.label :query, 'Digite a placa' %>
+  <%= f.text_field :query %>
+  <%= f.submit 'Buscar' %>
+<% end %>
+
+<% @vehicles.each do |v| %>
+  <div>
+    <h3><%= link_to(v.license_plate, vehicle_path(v.id)) %></h3>
+  </div>
+<% end %>
+
+<% if @vehicles.empty? %>
+  <p>Não existem veículos cadastrados</p>
+<% end %>
+
+<%= link_to 'Cadastrar Veículo', new_vehicle_path%>

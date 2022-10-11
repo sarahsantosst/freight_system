@@ -1,0 +1,40 @@
+<h1>Veículo</h1>
+
+<dl>
+  <dt>Placa de Identificação:</dt>
+  <dd><%=@vehicle.license_plate %></dd>
+
+  <dt>Marca:</dt>
+  <dd><%=@vehicle.brand %></dd>
+
+  <dt>Modelo:</dt>
+  <dd><%=@vehicle.model %></dd>
+
+  <dt>Ano de Fabricação:</dt>
+  <dd><%=@vehicle.manufacture_year %></dd>
+
+  <dt>Capacidade Máxima:</dt>
+  <dd><%=@vehicle.maximum_load_capacity%></dd>
+
+  <dt>Tipo de Transporte:</dt>
+  <dd><%=@vehicle.transport_type.name %></dd>
+
+  <dt>Ativo:</dt>
+  <dd><%=@vehicle.active %></dd>
+</dl>
+
+<div>
+  <% if (@vehicle.active?) %>
+    <%= button_to('Em manutenção', disable_vehicle_path(@vehicle.id), method: :disable)%>
+  <% else %>
+    <%= button_to('Ativar', active_vehicle_path(@vehicle.id), method: :active)%>
+  <% end %>
+</div>
+
+<div>
+  <%= link_to 'Editar', edit_vehicle_path %>
+</div>
+
+<div>
+  <%= link_to 'Voltar', vehicles_path %>
+</div>
