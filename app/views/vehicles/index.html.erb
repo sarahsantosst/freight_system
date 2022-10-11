@@ -16,4 +16,6 @@
   <p>Não existem veículos cadastrados</p>
 <% end %>
 
-<%= link_to 'Cadastrar Veículo', new_vehicle_path%>
+<% if (current_user.admin?) %>
+  <%= link_to 'Cadastrar Veículo', new_vehicle_path%>
+<% end %>

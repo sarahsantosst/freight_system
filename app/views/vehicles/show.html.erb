@@ -23,17 +23,21 @@
   <dd><%=@vehicle.active %></dd>
 </dl>
 
-<div>
-  <% if (@vehicle.active?) %>
-    <%= button_to('Em manutenção', disable_vehicle_path(@vehicle.id), method: :disable)%>
-  <% else %>
-    <%= button_to('Ativar', active_vehicle_path(@vehicle.id), method: :active)%>
-  <% end %>
-</div>
+<% if (current_user.admin?) %>
+  <div>
+    <% if (@vehicle.active?) %>
+      <%= button_to('Em manutenção', disable_vehicle_path(@vehicle.id), method: :disable)%>
+    <% else %>
+      <%= button_to('Ativar', active_vehicle_path(@vehicle.id), method: :active)%>
+    <% end %>
+  </div>
+<% end %>
 
-<div>
-  <%= link_to 'Editar', edit_vehicle_path %>
-</div>
+<% if (current_user.admin?) %>
+  <div>
+    <%= link_to 'Editar', edit_vehicle_path %>
+  </div>
+<% end %>
 
 <div>
   <%= link_to 'Voltar', vehicles_path %>

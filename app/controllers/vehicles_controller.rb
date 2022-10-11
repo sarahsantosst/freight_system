@@ -1,6 +1,6 @@
 class VehiclesController < ApplicationController
   skip_before_action :verify_authenticity_token
-  before_action :is_admin?
+  before_action :is_admin?, only: [:new, :create, :active, :disable, :edit, :update]
 
   def index
     @vehicles = Vehicle.all

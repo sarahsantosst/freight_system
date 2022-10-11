@@ -54,4 +54,17 @@ describe 'Administrador cadastra um novo veículo' do
     expect(page).to have_content 'Ano de fabricação não pode ficar em branco'
     expect(page).to have_content 'Capacidade Máxima não pode ficar em branco'
   end
+
+  it 'e não é Administrador' do
+    #assert
+    user = User.create!(name: "Joao", email:'joao@sistemadefrete.com.br', password:'password', admin: false)
+
+    #act
+    login_as(user)
+    visit root_path
+    click_on 'Veículo'
+
+    #assert 
+    expect(page).not_to have_content 'Cadastrar Veículo'
+  end
 end
