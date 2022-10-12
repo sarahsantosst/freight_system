@@ -49,7 +49,7 @@ RSpec.describe WeightConfig, type: :model do
       #assert
       expect(result).to eq true
     end
- end
+  end
 end
 
 
