@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_10_12_175154) do
+ActiveRecord::Schema[7.0].define(version: 2022_10_12_184846) do
   create_table "addresses", force: :cascade do |t|
     t.string "zip_code"
     t.string "full_address"
@@ -38,6 +38,15 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_12_175154) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["transport_type_id"], name: "index_distance_configs_on_transport_type_id"
+  end
+
+  create_table "products", force: :cascade do |t|
+    t.string "code"
+    t.integer "weight"
+    t.integer "height"
+    t.integer "depth"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "transport_types", force: :cascade do |t|

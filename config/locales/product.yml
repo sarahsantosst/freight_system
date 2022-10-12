@@ -1,0 +1,9 @@
+pt-BR:
+  activerecord:
+    models:
+      product: Produto
+    attributes:
+      product:
+        weight: "Peso"
+        height: "Endereço Completo"
+        depth: "Estado"
