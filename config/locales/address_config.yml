@@ -1,0 +1,11 @@
+pt-BR:
+  activerecord:
+    models:
+      address: Configuração de Distância
+    attributes:
+      address:
+        zip_code: "CEP"
+        full_address: "Endereço Completo"
+        city: "Cidade"
+        state: "Estado"
+        

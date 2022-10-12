@@ -10,7 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_10_11_222813) do
+ActiveRecord::Schema[7.0].define(version: 2022_10_12_175154) do
+  create_table "addresses", force: :cascade do |t|
+    t.string "zip_code"
+    t.string "full_address"
+    t.string "city"
+    t.string "state"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "deadline_configs", force: :cascade do |t|
     t.integer "transport_type_id", null: false
     t.integer "minimum_range"
