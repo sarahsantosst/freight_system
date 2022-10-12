@@ -1,8 +1,9 @@
 <h1>Configuração de Peso</h1>
 
+<h3>Tipo de transporte - Intervalo mínimo - Intervalo máximo - Valor</h3>
 <% @weight_configs.each do |w| %>
   <div>
-    <h3><%= w.minimum_range - w.maximum_range - w.value %></h3>
+    <h3><%= w.transport_type.name %> - <%= w.minimum_range %>kg - <%= w.maximum_range %>kg - R$<%= w.value %></h3>
   </div>
 <% end %>
 
