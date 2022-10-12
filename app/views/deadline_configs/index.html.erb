@@ -1,0 +1,15 @@
+<h1>Configuração de Prazo</h1>
+
+<% @deadline_configs.each do |d| %>
+  <div>
+    <h3><%= d.minimum_range - d.maximum_range - d.value %></h3>
+  </div>
+<% end %>
+
+<% if @deadline_configs.empty? %>
+  <p>Não existem configurações de prazo</p>
+<% end %>
+
+<% if (current_user.admin?) %>
+  <%= link_to 'Nova Configuração de Prazo', new_deadline_config_path %>
+<% end %>

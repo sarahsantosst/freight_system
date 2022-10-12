@@ -10,4 +10,7 @@ Rails.application.routes.draw do
     post 'active', on: :member
     post 'disable', on: :member
   end
+  resources :weight_configs, only: [:index, :new, :create, :show]
+  resources :distance_configs, only: [:index, :new, :create, :show]
+  resources :deadline_configs, only: [:index, :new, :create, :show]
 end

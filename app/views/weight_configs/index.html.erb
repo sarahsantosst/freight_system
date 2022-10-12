@@ -1,0 +1,17 @@
+<h1>Configuração de Peso</h1>
+
+<% @weight_configs.each do |w| %>
+  <div>
+    <h3><%= w.minimum_range - w.maximum_range - w.value %></h3>
+  </div>
+<% end %>
+
+<% if @weight_configs.empty? %>
+  <p>Não existem configurações de peso</p>
+<% end %>
+
+<% if (current_user.admin?) %>
+  <%= link_to 'Nova Configuração de Peso', new_weight_config_path%>
+<% end %>
+
+

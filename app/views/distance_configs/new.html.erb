@@ -1,0 +1,34 @@
+<h1>Cadastrar Nova Configuração de Distância</h1>
+
+<% if(@distance_config.errors.any?)%>
+  <p>Verifique os erros abaixo:</p>
+  <ul>
+    <% @distance_config.errors.full_messages.each do |msg| %>
+    <li> <%= msg %> </li>
+    <% end %>
+  </ul>
+<% end %>
+
+<%= form_with(model: @distance_config) do |f| %>
+  <div>
+    <%= f.label :transport_type_id %>
+    <%= f.collection_select :transport_type_id, @transport_types || [], :id, :name %>
+  </div>
+
+  <div>
+    <%= f.label :minimum_range %>
+    <%= f.text_field :minimum_range %>
+  </div>
+
+  <div>
+    <%= f.label :maximum_range %>
+    <%= f.text_field :maximum_range %>
+  </div>
+
+  <div>
+    <%= f.label :value %>
+    <%= f.text_field :value %>
+  </div>
+  
+  <%= f.submit 'Cadastrar' %>
+<% end %>

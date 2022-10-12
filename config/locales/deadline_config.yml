@@ -1,0 +1,11 @@
+pt-BR:
+  activerecord:
+    models:
+      deadline_config: Configuração de Distância
+    attributes:
+      deadline_config:
+        minimum_range: "Peso Mínimo"
+        maximum_range: "Peso Máximo"
+        value: "Valor"
+        transport_type_id: "Tipo de Transporte"
+        transport_type: "Tipo de Transporte"

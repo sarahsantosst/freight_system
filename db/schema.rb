@@ -10,7 +10,27 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_10_10_224555) do
+ActiveRecord::Schema[7.0].define(version: 2022_10_11_222813) do
+  create_table "deadline_configs", force: :cascade do |t|
+    t.integer "transport_type_id", null: false
+    t.integer "minimum_range"
+    t.integer "maximum_range"
+    t.decimal "value"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["transport_type_id"], name: "index_deadline_configs_on_transport_type_id"
+  end
+
+  create_table "distance_configs", force: :cascade do |t|
+    t.integer "transport_type_id", null: false
+    t.integer "minimum_range"
+    t.integer "maximum_range"
+    t.decimal "value"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["transport_type_id"], name: "index_distance_configs_on_transport_type_id"
+  end
+
   create_table "transport_types", force: :cascade do |t|
     t.string "name"
     t.integer "minimum_distance"
@@ -50,5 +70,18 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_10_224555) do
     t.index ["transport_type_id"], name: "index_vehicles_on_transport_type_id"
   end
 
+  create_table "weight_configs", force: :cascade do |t|
+    t.integer "transport_type_id", null: false
+    t.integer "minimum_range"
+    t.integer "maximum_range"
+    t.decimal "value"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["transport_type_id"], name: "index_weight_configs_on_transport_type_id"
+  end
+
+  add_foreign_key "deadline_configs", "transport_types"
+  add_foreign_key "distance_configs", "transport_types"
   add_foreign_key "vehicles", "transport_types"
+  add_foreign_key "weight_configs", "transport_types"
 end

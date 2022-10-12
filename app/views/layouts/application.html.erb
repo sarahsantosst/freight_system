@@ -16,6 +16,9 @@
         <% if user_signed_in? %>
           <%= link_to 'Tipo de Transporte', transport_types_path %>
           <%= link_to 'Veículo', vehicles_path %>
+          <%= link_to 'Configuração de Peso', weight_configs_path %>
+          <%= link_to 'Configuração de Distância', distance_configs_path %>
+          <%= link_to 'Configuração de Prazo', deadline_configs_path %>
           <%= current_user.description %>
           <%= button_to 'Sair', destroy_user_session_path, method: :delete %>
         <% else %>
