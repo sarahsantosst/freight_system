@@ -1,0 +1,25 @@
+pt-BR:
+  pending: "Pendente"
+  canceled: "Cancelado"
+  delivered: "Entregue"
+  activerecord:
+    models:
+      service_order: Ordem de Serviço
+    attributes:
+      service_order:
+        status: "Situação"
+        total_distance: "Distância Total"
+        product_weight: "Peso do Produto"
+        product_width: "Comprimento do Produto"
+        product_height: "Altura do Produto"
+        product_depth: "Profundidade do Produto"
+        sender_address_full_address : "Endereço Remetente"
+        sender_address_city : "Cidade Remetente"
+        sender_address_state : "Estado"
+        destination_name: "Nome do Destinatário" 
+        destination_document: 'Documento'
+        destination_address_zip_code: 'CEP Destino'
+        sender_address_zip_code: 'CEP Remetente'
+        destination_address_full_address: 'Endereço Destinatário'
+        destination_address_city: 'Cidade Destino'
+        destination_address_state: 'Estado Destino'

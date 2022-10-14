@@ -13,4 +13,5 @@ Rails.application.routes.draw do
   resources :weight_configs, only: [:index, :new, :create, :show]
   resources :distance_configs, only: [:index, :new, :create, :show]
   resources :deadline_configs, only: [:index, :new, :create, :show]
+  resources :service_orders, only: [:index, :new, :create, :show]
 end

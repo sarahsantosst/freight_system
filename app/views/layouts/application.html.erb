@@ -19,6 +19,7 @@
           <%= link_to 'Configuração de Peso', weight_configs_path %>
           <%= link_to 'Configuração de Distância', distance_configs_path %>
           <%= link_to 'Configuração de Prazo', deadline_configs_path %>
+          <%= link_to 'Ordem de Serviço', service_orders_path %>
           <%= current_user.description %>
           <%= button_to 'Sair', destroy_user_session_path, method: :delete %>
         <% else %>

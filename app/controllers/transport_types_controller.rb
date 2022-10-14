@@ -61,10 +61,4 @@ class TransportTypesController < ApplicationController
       .require(:transport_type)
       .permit(:name, :minimum_distance, :maximum_distance, :minimum_weight, :maximum_weight, :flat_hate)
   end
- 
-  def is_admin?
-    if !current_user.admin?
-      redirect_to root_path, alert: 'Página restrita, somente administradores'
-    end
-  end
 end

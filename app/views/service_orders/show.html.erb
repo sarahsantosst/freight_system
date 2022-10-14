@@ -1,0 +1,9 @@
+<h1><%= ServiceOrder.model_name.human%> - <%= I18n.translate @service_order.status%></h1>
+
+<dl>
+  <dt>Destinatário:</dt>
+  <dd><%= @service_order.destination_address_full_address%> </dd>
+  <dd><%= @service_order.destination_address_city %> </dd>
+  <dd><%= @service_order.destination_address_state %> </dd>
+  <dd><%= @service_order.destination_address_zip_code %> </dd>
+</dl>

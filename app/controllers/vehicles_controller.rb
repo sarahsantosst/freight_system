@@ -74,10 +74,4 @@ class VehiclesController < ApplicationController
       .require(:vehicle)
       .permit(:license_plate, :brand, :model, :manufacture_year, :maximum_load_capacity, :transport_type_id)
   end
- 
-  def is_admin?
-    if !current_user.admin?
-      redirect_to root_path, alert: 'Página restrita, somente administradores'
-    end
-  end
 end
