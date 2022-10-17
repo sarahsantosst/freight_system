@@ -1,7 +1,10 @@
 pt-BR:
   pending: "Pendente"
+  started: "Iniciada"
   canceled: "Cancelado"
   delivered: "Entregue"
+  closed_on_deadline: "Entregue no prazo"
+  closed_late: "Entregue com atraso"
   activerecord:
     models:
       service_order: Ordem de Serviço

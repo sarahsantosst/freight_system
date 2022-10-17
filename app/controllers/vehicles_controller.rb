@@ -27,7 +27,7 @@ class VehiclesController < ApplicationController
 
   def active
     @vehicle = Vehicle.find(params[:id])
-    @vehicle.active = true
+    @vehicle.status = 'active'
     if @vehicle.save()
       redirect_to vehicles_url, notice: 'Veículo habilitado com sucesso.'
     else
@@ -38,7 +38,7 @@ class VehiclesController < ApplicationController
 
   def disable
     @vehicle = Vehicle.find(params[:id])
-    @vehicle.active = false
+    @vehicle.status = 'disable'
     if @vehicle.save()
       redirect_to vehicles_url, notice: 'Veículo desabilitado com sucesso.'
     else

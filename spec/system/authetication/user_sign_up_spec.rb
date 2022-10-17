@@ -4,7 +4,7 @@ describe 'Usuário cria conta' do
   it 'com sucesso' do
     #act
     visit root_path
-    click_on 'Entrar'
+    click_on 'Fazer login'
     click_on 'Criar uma conta'
     fill_in 'Nome', with:'Maria'
     fill_in 'E-mail', with:'maria@sistemadefrete.com.br'
@@ -24,7 +24,7 @@ describe 'Usuário cria conta' do
   it 'com email inválido' do
     #act
     visit root_path
-    click_on 'Entrar'
+    click_on 'Fazer login'
     click_on 'Criar uma conta'
     fill_in 'Nome', with:'João'
     fill_in 'E-mail', with:'joao@email.com'
@@ -39,7 +39,7 @@ describe 'Usuário cria conta' do
   it 'de administrador com sucesso' do
     #act
     visit root_path
-    click_on 'Entrar'
+    click_on 'Fazer login'
     click_on 'Criar uma conta'
     fill_in 'Nome', with:'Admin'
     fill_in 'E-mail', with:'admin@sistemadefrete.com.br'

@@ -1,9 +1,58 @@
-<h1><%= ServiceOrder.model_name.human%> - <%= I18n.translate @service_order.status%></h1>
+<h1><%= ServiceOrder.model_name.human %> - <%= I18n.translate @service_order.status%></h1>
 
 <dl>
+  <dt>Código:</dt>
+  <dd><%= @service_order.code %> </dd>
+
+  <dt>Distância total:</dt>
+  <dd><%= @service_order.total_distance %> </dd>
+
+  <dt>Produto:</dt>
+  <dd><%= @service_order.product_code%> </dd>
+  <dd><%= @service_order.product_weight %>m </dd>
+  <dd><%= @service_order.product_width %>m </dd>
+  <dd><%= @service_order.product_height %>m </dd>
+  <dd><%= @service_order.product_depth %>cm </dd>
+
+  <dt>Remetente:</dt>
+  <dd><%= @service_order.sender_address_full_address%> </dd>
+  <dd><%= @service_order.sender_address_city %> </dd>
+  <dd><%= @service_order.sender_address_state %> </dd>
+  <dd><%= @service_order.sender_address_zip_code %> </dd>
+
   <dt>Destinatário:</dt>
-  <dd><%= @service_order.destination_address_full_address%> </dd>
+  <dd><%= @service_order.destination_name %> </dd>
+  <dd><%= @service_order.destination_document %> </dd>
+  <dd><%= @service_order.destination_address_full_address %> </dd>
   <dd><%= @service_order.destination_address_city %> </dd>
   <dd><%= @service_order.destination_address_state %> </dd>
   <dd><%= @service_order.destination_address_zip_code %> </dd>
 </dl>
+
+<% if @service_order.status == 'pending' %>
+  <div>
+    <h2>Tipos de transporte disponíveis</h2>
+
+    <% @transport_types.each do |t| %>
+      <p>
+        <%= 
+          button_to(
+            "#{t.name} - Preço: R$#{@service_order.calc_total_price(t)} - Prazo: #{@service_order.calc_total_deadline(t)}h",
+            service_order_init_path(@service_order.id, t.id), 
+            method: :init
+          )
+        %>
+      </p>
+    <% end %>
+
+    <% if @transport_types.empty? %>
+      <p>Nenhum tipo de transporte atende essa ordem de serviço</p>
+    <% end %>
+  </div>
+<% end %>
+
+<% if @service_order.status == 'started' %>
+  <%= 
+    button_to("Encerrar", finish_service_order_path(@service_order.id), method: :finish)
+  %>
+<% end %>

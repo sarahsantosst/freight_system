@@ -39,10 +39,21 @@ describe 'Administrador cadastra uma nova ordem de serviço' do
 
     #assert
     expect(page).to have_content 'Ordem de serviço cadastrada com sucesso.'
+    expect(page).to have_content 'ADSGTHDEVBKILPQ'
+    expect(page).to have_content 'Distância total: 100'
+    expect(page).to have_content 'ADSGTHDE'
+    expect(page).to have_content '20'
+    expect(page).to have_content '10'
+    expect(page).to have_content '2'
+    expect(page).to have_content '2'
+    expect(page).to have_content 'C1'
+    expect(page).to have_content 'Brasília'
+    expect(page).to have_content 'Sarah'
+    expect(page).to have_content '42922563999'
     expect(page).to have_content 'Rua 1'
     expect(page).to have_content 'Rio de Janeiro'
     expect(page).to have_content 'RJ'
-    expect(page).to have_content '71111888'
-    end
-  end 
+    expect(page).to have_content 'Tipos de transporte disponíveis'
+  end
+end 
   

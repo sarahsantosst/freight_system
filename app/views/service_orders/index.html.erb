@@ -1,13 +1,29 @@
 <h1>Ordem de Serviço</h1>
 
-<% @service_orders.each do |o| %>
-  <div>
-    <h3><%= link_to(o.code, service_order_path(o.id)) %> - <%= I18n.translate(o.status) %></h3>
-  </div>
-<% end %>
+<% if (current_user.admin?) %>
+  <% @all_service_orders.each do |o| %>
+    <div>
+      <h3><%= link_to(o.code, service_order_path(o.id)) %> - <%= I18n.translate(o.status) %></h3>
+    </div>
+  <% end %>
 
-<% if @service_orders.empty? %>
-  <p>Não existem ordem de serviço cadastradas</p>
-<% end %>
+  <% if @all_service_orders.empty? %>
+    <p>Não existem ordem de serviço cadastradas</p>
+  <% end %>
+<% end %> 
 
-<%= link_to 'Cadastrar Nova Ordem de Serviço', new_service_order_path %>
+<% if (!current_user.admin?) %>
+  <% @pending_service_orders.each do |o| %>
+    <div>
+      <h3><%= link_to(o.code, service_order_path(o.id)) %> - <%= I18n.translate(o.status) %></h3>
+    </div>
+  <% end %> 
+
+  <% if @pending_service_orders.empty? %>
+    <p>Não existem ordem de serviço pendentes</p>
+  <% end %>
+<% end %> 
+
+<% if (current_user.admin?) %>
+  <%= link_to 'Cadastrar Nova Ordem de Serviço', new_service_order_path %>
+<% end %>

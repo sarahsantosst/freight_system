@@ -1,0 +1,6 @@
+<h1>Resultado da busca por: <%= @code %></h1>
+<span>Orders de servicço encontradas: <%= @service_orders.count %> </span>
+
+<% @service_orders.each do |so| %>
+  <dd><%= so.code %> - <%= so.status %></dd>
+<% end %>

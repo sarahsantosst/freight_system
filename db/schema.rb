@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_10_13_165446) do
+ActiveRecord::Schema[7.0].define(version: 2022_10_15_142159) do
   create_table "addresses", force: :cascade do |t|
     t.string "zip_code"
     t.string "full_address"
@@ -71,6 +71,10 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_13_165446) do
     t.string "destination_address_state"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.decimal "total_price", default: "0.0"
+    t.decimal "total_deadline", default: "0.0"
+    t.datetime "delivered_date"
+    t.string "reason"
     t.index ["vehicle_id"], name: "index_service_orders_on_vehicle_id"
   end
 
@@ -109,7 +113,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_13_165446) do
     t.string "maximum_load_capacity"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.boolean "active", default: true
+    t.integer "status", default: 0
     t.index ["transport_type_id"], name: "index_vehicles_on_transport_type_id"
   end
 

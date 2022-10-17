@@ -10,4 +10,6 @@
   <p>Não existem tipos de transportes cadastrados</p>
 <% end %>
 
-<%= link_to 'Cadastrar Tipo de Transporte', new_transport_type_path%>
+<% if (current_user.admin?) %>
+  <%= link_to 'Cadastrar Tipo de Transporte', new_transport_type_path%>
+<% end %>

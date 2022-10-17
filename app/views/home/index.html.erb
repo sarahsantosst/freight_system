@@ -1,0 +1,5 @@
+<%= form_with(url: search_path, method: :get) do |f| %>
+  <%= f.label :query, 'Digite o código' %>
+  <%= f.text_field :query %>
+  <%= f.submit 'Buscar' %>
+<% end %>

@@ -16,7 +16,7 @@ describe 'Usuário visita tela de veículo cadastrado' do
     click_on 'CRISI02089'
 
     #assert
-    expect(page).to have_content 'Ativo: false'
+    expect(page).to have_content 'Ativar'
    end
  end
 

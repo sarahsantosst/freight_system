@@ -25,6 +25,12 @@ bundle install
 rails db:migration
 ```
 
+### Popular base de dados
+
+```shell
+rails db:seed
+```
+
 ### Rodar aplicação
 
 ```shell

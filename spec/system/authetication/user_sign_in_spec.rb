@@ -29,19 +29,16 @@ describe 'Usuário se autentica' do
     User.create!(name: 'John Doe', email:'johndoe@sistemadefrete.com.br', password:'password')
     
     #act
-      visit root_path
-      click_on 'Fazer login'
-      fill_in 'E-mail', with: 'johndoe@sistemadefrete.com.br'
-      fill_in 'Senha', with: 'password'
-      within('form') do
-        click_on 'Entrar'
-      end
-      click_on 'Sair'
+    visit root_path
+    click_on 'Fazer login'
+    fill_in 'E-mail', with: 'johndoe@sistemadefrete.com.br'
+    fill_in 'Senha', with: 'password'
+    within('form') do
+      click_on 'Entrar'
+    end
+    click_on 'Sair'
 
     #assert
-    expect(page).to have_content 'Para continuar, faça login ou registre-se.'
-    expect(page).to have_link 'Fazer login'
-    expect(page).not_to have_button 'Sair'
-    expect(page).not_to have_content 'John Doe - johndoe@sistemadefrete.com.br'
+    expect(page).to have_content 'Logout efetuado com sucesso.'
   end
 end
